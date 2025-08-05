@@ -9,14 +9,14 @@ import { useState } from "react";
 import PostListProvider from "./store/post-list-store.jsx";
 
 const App = () => {
-  const [selectedTab, setSelectedTab] = useState("Create Post");
+  const [selectedTab, setSelectedTab] = useState("Home");
   return (
     <PostListProvider>
       <div className="flex">
         <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
         <div className="w-full">
           <Header />
-          {selectedTab === "Home" ? <CreatePost /> : <PostList />}
+          {selectedTab === "Home" ? <PostList /> : <CreatePost />}
           <Footer />
         </div>
       </div>
